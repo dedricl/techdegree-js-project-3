@@ -18,5 +18,7 @@ $('#other-title').hide();
 
 //To hide the options to select a T-shirt design
 $('#design option').hide();
-$('#color option').hide();
-$('#color option').text('Please select a T-shirt theme');
+
+$('#color option:first').before('<option>Please select a T-shirt theme</option>');
+
+$('#color option[value]').hide();
