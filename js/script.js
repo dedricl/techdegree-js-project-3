@@ -16,9 +16,18 @@ $('#other-title').hide();
 
 });
 
-//To hide the options to select a T-shirt design
-$('#design option').hide();
+//To hide the Select Theme option iDesign drop-down
+$('#design option').eq(0).text("");
 
-$('#color option:first').before('<option>Please select a T-shirt theme</option>');
+ $('#color').prepend("<option selected = 'selected'>Please select a T-shirt theme</option>");
 
-$('#color option[value]').hide();
+ $('#color option').hide();
+
+
+
+//  //event listner for T-shirt section
+$('#design').on('change', function(){
+  if($(this).val() === 'js puns') {
+      $('#color option').show();
+  }
+});
