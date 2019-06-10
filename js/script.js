@@ -28,6 +28,30 @@ $('#design option').eq(0).text("");
 //  //event listner for T-shirt section
 $('#design').on('change', function(){
   if($(this).val() === 'js puns') {
-      $('#color option').show();
+      $('#color option:contains("JS shirt")').hide();
+      $('#color option:contains("Puns")').show();
+      $('#color option:contains("Please")').removeAttr('selected');
+      $('#color option[value="tomato"]').removeAttr("selected");
+      $('#color option[value="cornflowerblue"]').attr("selected", "selected");
+
+
+
   }
+  if($(this).val() === 'heart js') {
+      $('#color option:contains("Puns")').hide();
+      $('#color option:contains("JS shirt")').show();
+      $('#color option:contains("Please")').removeAttr('selected');
+      $('#color option[value="cornflowerblue"]').removeAttr("selected");
+      $('#color option[value="tomato"]').attr("selected", "true");
+
+
+
+
+
+
+  }
+
+
+
+
 });
